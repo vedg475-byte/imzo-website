@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11110f">
+  <meta name="description" content="Discover Ember & Oak — modern dining, seasonal ingredients, unforgettable evenings.">
+  <title>Ember & Oak — A Modern Dining Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">AN EVENING WORTH REMEMBERING <span>✦</span> OPEN DAILY, 12 PM — 11 PM</div>
+
+  <header class="header">
+    <a href="#home" class="brand"><span class="brand-mark">E<span>&</span>O</span><span class="brand-name">EMBER <i>&</i> OAK<small>MODERN DINING</small></span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#story">Our story</a>
+      <a href="#menu">The menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reservation" class="nav-cta">Reserve a table <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-image"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span></span> AN EXTRAORDINARY DINING EXPERIENCE</div>
+        <h1>Where fire<br>meets <em>flavour.</em></h1>
+        <p>Thoughtfully sourced ingredients. Honest fire. Beautiful food. An evening that stays with you long after the last bite.</p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-gold">Explore the menu <span>↗</span></a>
+          <a href="#story" class="text-link">Discover our story <span>↓</span></a>
+        </div>
+      </div>
+      <div class="hero-bottom"><span>01 — 04</span><span>CRAFTED WITH FIRE & SOUL</span><span>EST. 2018</span></div>
+      <div class="hero-side">A TABLE FOR EVERY OCCASION</div>
+    </section>
+
+    <section class="intro section-pad" id="story">
+      <div class="intro-photo"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85" alt="Warmly lit fine dining restaurant" loading="lazy"><span class="photo-tag">GOOD FOOD. GOOD COMPANY.</span></div>
+      <div class="intro-copy">
+        <div class="eyebrow"><span></span> A LITTLE ABOUT US</div>
+        <h2>Not just a meal.<br><em>A moment.</em></h2>
+        <p class="muted">We believe the best evenings happen around a table. The sound of a glass being poured, the aroma of something beautiful coming off the fire, and conversations that last a little longer.</p>
+        <p class="muted">Our kitchen celebrates seasonal produce, carefully chosen ingredients and the timeless art of cooking over an open flame.</p>
+        <a href="#reservation" class="under-link">Come experience it <span>↗</span></a>
+        <div class="signature">Made with intention. Served with heart.</div>
+      </div>
+    </section>
+
+    <section class="menu-section section-pad" id="menu">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span></span> FROM OUR KITCHEN</div><h2>A taste of <em>what's good.</em></h2></div>
+        <p>Seasonal ingredients, thoughtful preparation<br>and a little fire in everything we do.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter menu">
+        <button class="filter active" data-category="all">All dishes</button>
+        <button class="filter" data-category="starters">Starters</button>
+        <button class="filter" data-category="mains">Mains</button>
+        <button class="filter" data-category="desserts">Desserts</button>
+        <button class="filter" data-category="drinks">Drinks</button>
+      </div>
+      <div class="menu-grid">
+        <article class="dish" data-category="starters">
+          <div class="dish-image"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=85" alt="Fresh seasonal salad" loading="lazy"><span class="dish-number">01</span></div>
+          <div class="dish-info"><div><h3>Garden on a Plate</h3><p>Seasonal greens, citrus dressing, toasted seeds</p></div><span class="price">₹395</span></div>
+          <span class="dish-type">STARTER · VEGETARIAN</span>
+        </article>
+        <article class="dish" data-category="starters">
+          <div class="dish-image"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=85" alt="Roasted vegetables" loading="lazy"><span class="dish-number">02</span></div>
+          <div class="dish-info"><div><h3>Fire-Roasted Bites</h3><p>Charred seasonal vegetables, herb yoghurt</p></div><span class="price">₹445</span></div>
+          <span class="dish-type">STARTER · VEGETARIAN</span>
+        </article>
+        <article class="dish" data-category="mains">
+          <div class="dish-image"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=85" alt="Chef-prepared gourmet main course" loading="lazy"><span class="dish-number">03</span></div>
+          <div class="dish-info"><div><h3>The Ember Signature</h3><p>Chef's seasonal special, garden vegetables</p></div><span class="price">₹795</span></div>
+          <span class="dish-type">MAIN COURSE · CHEF'S PICK</span>
+        </article>
+        <article class="dish" data-category="mains">
+          <div class="dish-image"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=85" alt="Fresh pasta with herbs" loading="lazy"><span class="dish-number">04</span></div>
+          <div class="dish-info"><div><h3>Handmade Garden Pasta</h3><p>Fresh pasta, slow-roasted tomato, basil</p></div><span class="price">₹625</span></div>
+          <span class="dish-type">MAIN COURSE · VEGETARIAN</span>
+        </article>
+        <article class="dish" data-category="desserts">
+          <div class="dish-image"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=85" alt="Decadent chocolate cake" loading="lazy"><span class="dish-number">05</span></div>
+          <div class="dish-info"><div><h3>Midnight Chocolate</h3><p>Rich chocolate, cocoa, delicate cream</p></div><span class="price">₹325</span></div>
+          <span class="dish-type">DESSERT · HOUSE FAVOURITE</span>
+        </article>
+        <article class="dish" data-category="drinks">
+          <div class="dish-image"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=700&q=85" alt="Refreshing citrus drink" loading="lazy"><span class="dish-number">06</span></div>
+          <div class="dish-info"><div><h3>Golden Hour Cooler</h3><p>Fresh citrus, mint, sparkling water</p></div><span class="price">₹245</span></div>
+          <span class="dish-type">DRINK · ZERO ALCOHOL</span>
+        </article>
+      </div>
+      <p class="menu-note">A SAMPLE MENU · Prices and availability may vary.</p>
+    </section>
+
+    <section class="quote-band">
+      <span class="quote-mark">“</span>
+      <blockquote>Great food brings us together.<br><em>Great moments keep us coming back.</em></blockquote>
+      <span class="quote-caption">THE EMBER & OAK PHILOSOPHY</span>
+    </section>
+
+    <section class="gallery section-pad" id="gallery">
+      <div class="section-heading"><div><div class="eyebrow"><span></span> A LOOK INSIDE</div><h2>Made for <em>the moments.</em></h2></div><p>Come for the food. Stay for the feeling.</p></div>
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85" alt="Elegant restaurant interior" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=700&q=85" alt="Intimate fine dining table" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=85" alt="Beautifully plated food" loading="lazy">
+      </div>
+    </section>
+
+    <section class="reservation section-pad" id="reservation">
+      <div class="reservation-copy">
+        <div class="eyebrow"><span></span> YOUR TABLE IS WAITING</div>
+        <h2>Make it an<br><em>evening to remember.</em></h2>
+        <p class="muted">A date night, a family celebration or simply because it's Tuesday. We'd love to have you.</p>
+        <div class="reservation-detail"><span>✳</span><div><strong>OPENING HOURS</strong><p>Every day · 12:00 PM – 11:00 PM</p></div></div>
+        <div class="reservation-detail"><span>✳</span><div><strong>FIND US</strong><p>Restaurant address to be added</p></div></div>
+      </div>
+      <form class="reservation-form" id="reservationForm">
+        <div class="form-title">Reserve your table <span>✦</span></div>
+        <p class="form-subtitle">Tell us a little about your visit.</p>
+        <label for="guestName">YOUR NAME</label><input id="guestName" name="name" placeholder="Your full name" required>
+        <div class="form-row"><div><label for="guestEmail">EMAIL ADDRESS</label><input id="guestEmail" name="email" type="email" placeholder="you@example.com" required></div><div><label for="guestPhone">PHONE NUMBER</label><input id="guestPhone" name="phone" type="tel" placeholder="Your phone" required></div></div>
+        <div class="form-row"><div><label for="guestDate">DATE</label><input id="guestDate" name="date" type="date" required></div><div><label for="guestTime">TIME</label><select id="guestTime" name="time" required><option value="">Select time</option><option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option><option>5:00 PM</option><option>6:00 PM</option><option>7:00 PM</option><option>8:00 PM</option><option>9:00 PM</option><option>10:00 PM</option></select></div></div>
+        <label for="guestCount">NUMBER OF GUESTS</label><select id="guestCount" name="guests"><option>1 Guest</option><option selected>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5 Guests</option><option>6 Guests</option><option>7+ Guests</option></select>
+        <label for="guestNotes">SPECIAL REQUESTS <span class="optional">(OPTIONAL)</span></label><textarea id="guestNotes" name="notes" placeholder="Birthday, dietary preferences..." rows="3"></textarea>
+        <button class="btn btn-gold submit-btn" type="submit">Request a reservation <span>↗</span></button>
+        <p class="form-footnote">Demo booking form · Submission opens your email app.</p>
+        <div id="formMessage" class="form-message" role="status"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="brand footer-brand"><span class="brand-mark">E<span>&</span>O</span><span class="brand-name">EMBER <i>&</i> OAK<small>MODERN DINING</small></span></a>
+    <p>Thoughtfully made. Beautifully shared.</p>
+    <div class="footer-bottom"><span>© 2026 EMBER & OAK · DEMO WEBSITE</span><a href="#home">BACK TO TOP ↑</a></div>
+  </footer>
+</body>
+</html>
+
