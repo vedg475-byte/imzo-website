@@ -243,3 +243,24 @@ iframe {
   background: rgba(160, 110, 255, 0.12);
   border-color: #b58cff;
 }
+
+/* WhatsApp country code and number layout */
+.whatsapp-field {
+  display: grid;
+  grid-template-columns: minmax(135px, 0.9fr) minmax(0, 1.4fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.whatsapp-field select,
+.whatsapp-field input {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .whatsapp-field {
+    grid-template-columns: minmax(115px, 0.9fr) minmax(0, 1.1fr);
+    gap: 8px;
+  }
+}

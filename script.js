@@ -46,40 +46,54 @@
 
   const form = document.querySelector("#contactForm");
   const status = document.querySelector("#formStatus");
+
   if (form) {
-    form.addEventListener("submit", event => {
+    form.addEventListener("submit", async event => {
       event.preventDefault();
       if (!form.reportValidity()) return;
 
-      const data = new FormData(form);
-      const subject = `Project enquiry — ${data.get("service")}`;
-      const body = [
-        `Name: ${data.get("name")}`,
-        `Email: ${data.get("email")}`,
-        `Service: ${data.get("service")}`,
-        `Budget: ${data.get("budget")}`,
-        "",
-        "Project details:",
-        data.get("message")
-      ].join("\n");
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton ? submitButton.textContent : "";
 
-      // Replace this placeholder with the agency's real email before publishing.
-      const businessEmail = "vedg475@gmail.com";
-
-      if (businessEmail.endsWith(".example")) {
-        status.textContent = "Demo mode: form validation works. Before launch, replace hello@vertexdigital.example in script.js with your real email address.";
-        status.scrollIntoView({ behavior: "smooth", block: "nearest" });
-        return;
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
       }
+      if (status) status.textContent = "Sending your enquiry...";
 
-      const mailto = `mailto:${businessEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      status.textContent = "Opening your email app with the enquiry details…";
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(businessEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      try {
+        const formData = new FormData(form);
+        formData.append("access_key", "a821e845-066b-40b5-9a75-6324193b9bc0");
+        formData.append("subject", `New IMZO project enquiry â€” ${formData.get("service")}`);
+        formData.append("from_name", "IMZO Website");
 
-window.open(gmailUrl, "_blank");
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Submission failed");
+        }
+
+        if (status) {
+          status.textContent = "Thanks! Your enquiry has been sent. We'll get back to you soon.";
+        }
+        form.reset();
+      } catch (error) {
+        console.error("IMZO enquiry form error:", error);
+        if (status) {
+          status.textContent = "Sorry, your enquiry could not be sent. Please try again.";
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+        }
+      }
     });
   }
-
   const year = document.querySelector("#year");
   if (year) year.textContent = new Date().getFullYear();
 })();
