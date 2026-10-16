@@ -1440,3 +1440,161 @@ iframe {
   }
 }
 /* ===== END IMZO HERO LIGHT POLISH V1 ===== */
+
+/* IMZO PORTFOLIO PREVIEW THEME FIX — October 2026 */
+
+/* NOIR: warm cream / beige ecommerce preview */
+.imzo-preview-noir {
+  background: linear-gradient(140deg, #f8f3e9, #eee4d4 68%, #e5d7c4) !important;
+  color: #29251f !important;
+}
+
+.imzo-noir-browser {
+  background: rgba(250, 247, 241, .97) !important;
+  color: #29251f !important;
+  border-color: #ded3c3 !important;
+}
+
+.imzo-noir-browser .imzo-browser-links {
+  color: #6f665a !important;
+}
+
+.imzo-noir-browser .imzo-browser-cta {
+  background: #29251f !important;
+  color: #fffaf1 !important;
+}
+
+.imzo-noir-copy,
+.imzo-noir-copy > strong {
+  color: #29251f !important;
+}
+
+.imzo-noir-copy > small {
+  color: #8b6b45 !important;
+}
+
+.imzo-noir-copy .imzo-mini-button {
+  background: #29251f !important;
+  border-color: #29251f !important;
+  color: #fffaf1 !important;
+}
+
+.imzo-noir-caption {
+  color: rgba(41, 37, 31, .68) !important;
+}
+
+.imzo-product-light {
+  background: radial-gradient(ellipse, rgba(184, 145, 91, .28), transparent 67%) !important;
+}
+
+.imzo-product-object {
+  background-color: #c8b69b !important;
+  border-color: #e0d2bc !important;
+}
+
+/* EMBER & OAK: charcoal / black with warm gold accents */
+.imzo-preview-ember {
+  background: linear-gradient(140deg, #171715, #24211b 68%, #111110) !important;
+  color: #f5efe3 !important;
+}
+
+.imzo-ember-browser {
+  background: rgba(19, 19, 17, .97) !important;
+  border-color: #49402f !important;
+  color: #f5efe3 !important;
+}
+
+.imzo-ember-browser .imzo-browser-links {
+  color: #d2c3a3 !important;
+}
+
+.imzo-ember-menu,
+.imzo-ember-browser .imzo-browser-cta {
+  background: #a8874f !important;
+  color: #171715 !important;
+}
+
+.imzo-ember-room {
+  background:
+    radial-gradient(ellipse at 75% 35%, rgba(151, 116, 61, .18), transparent 48%),
+    linear-gradient(180deg, #292720, #171715) !important;
+}
+
+.imzo-ember-copy,
+.imzo-ember-copy > strong {
+  color: #f5efe3 !important;
+}
+
+.imzo-ember-copy > small {
+  color: #c8a86c !important;
+}
+
+.imzo-ember-button {
+  background: #a8874f !important;
+  border-color: #a8874f !important;
+  color: #171715 !important;
+}
+
+.imzo-ember-table {
+  background: #8b6a3d !important;
+  box-shadow: 0 7px 0 #4b3825 !important;
+}
+
+.imzo-ember-table::before,
+.imzo-ember-table::after {
+  background: #4b3825 !important;
+}
+
+.imzo-ember-vase {
+  background: linear-gradient(90deg, #756447, #c6aa70, #776747) !important;
+}
+
+.imzo-ember-plant {
+  border-left-color: #777c58 !important;
+}
+
+.imzo-ember-plant::before,
+.imzo-ember-plant::after {
+  background: #777c58 !important;
+}
+
+
+/* EMBER & OAK — deeper charcoal premium theme */
+.imzo-preview-ember {
+  background: linear-gradient(140deg, #090a09, #14130f 68%, #080908) !important;
+  color: #f5efe3 !important;
+}
+
+.imzo-ember-browser {
+  background: rgba(10, 10, 9, .98) !important;
+  border-color: #332b1d !important;
+}
+
+.imzo-ember-room {
+  background:
+    radial-gradient(ellipse at 75% 35%, rgba(151, 116, 61, .10), transparent 48%),
+    linear-gradient(180deg, #191814, #0b0c0b) !important;
+}
+
+.imzo-ember-table {
+  background: #72532f !important;
+  box-shadow: 0 7px 0 #302216 !important;
+}
+
+.imzo-ember-table::before,
+.imzo-ember-table::after {
+  background: #302216 !important;
+}
+
+.imzo-ember-vase {
+  background: linear-gradient(90deg, #62543b, #a68a55, #62543b) !important;
+}
+
+.imzo-ember-copy > small {
+  color: #c4a568 !important;
+}
+
+.imzo-ember-browser .imzo-browser-links {
+  color: #c5b58f !important;
+}
+
