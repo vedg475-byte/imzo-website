@@ -1,4 +1,4 @@
-﻿
+
 const products = [
   {id:1,name:"Sculpted Everyday Bottle",category:"Lifestyle",price:1250,label:"BESTSELLER",symbol:"N°01",image:"https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=85",description:"A refined reusable bottle for everyday hydration."},
   {id:2,name:"Soft Form Ceramic Vase",category:"Home",price:1850,label:"NEW",symbol:"FORM",image:"https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=900&q=85",description:"A sculptural ceramic accent for a calmer space."},
@@ -359,3 +359,41 @@ function showToast(message) {
 
 renderProducts();
 renderCart();
+
+/* NOIR CAMPAIGN SLIDER CONTROLS - POWERSHELL INSTALL */
+(() => {
+  const slider = document.querySelector('.campaign-slider');
+  if (!slider || slider.dataset.initialized === 'true') return;
+  slider.dataset.initialized = 'true';
+  const slides = [...slider.querySelectorAll('.campaign-slide')];
+  const dots = [...slider.querySelectorAll('.campaign-dot')];
+  const previous = slider.querySelector('.campaign-prev');
+  const next = slider.querySelector('.campaign-next');
+  let current = 0, startX = 0, startY = 0;
+  function showSlide(index) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => {
+      const active = i === current;
+      slide.classList.toggle('is-active', active);
+      slide.setAttribute('aria-hidden', String(!active));
+    });
+    dots.forEach((dot, i) => {
+      const active = i === current;
+      dot.classList.toggle('is-active', active);
+      if (active) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
+  }
+  previous.addEventListener('click', () => showSlide(current - 1));
+  next.addEventListener('click', () => showSlide(current + 1));
+  dots.forEach(dot => dot.addEventListener('click', () => showSlide(Number(dot.dataset.slideTo))));
+  slider.addEventListener('touchstart', event => {
+    const touch = event.changedTouches[0]; startX = touch.clientX; startY = touch.clientY;
+  }, { passive: true });
+  slider.addEventListener('touchend', event => {
+    const touch = event.changedTouches[0];
+    const dx = touch.clientX - startX, dy = touch.clientY - startY;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.2) showSlide(dx < 0 ? current + 1 : current - 1);
+  }, { passive: true });
+  showSlide(0);
+})();

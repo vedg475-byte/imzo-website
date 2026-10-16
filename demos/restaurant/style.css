@@ -5,3 +5,377 @@
 @media(max-width:760px){.announcement{font-size:7px;letter-spacing:1px}.header{height:75px}.brand-mark{width:40px;height:40px}.brand-name{font-size:13px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:74px;left:0;right:0;background:#141411;padding:20px 6% 26px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav>a{padding:13px 0;border-bottom:1px solid #ffffff0a}.nav .nav-cta{margin-top:13px;text-align:center;border:1px solid var(--gold);padding:12px}.hero{min-height:620px;height:calc(100svh - 109px);max-height:760px;padding:0 7%}.hero-overlay{background:linear-gradient(90deg,#11110ff0,#11110fb5 72%,#11110f88),linear-gradient(0deg,#11110f 0%,transparent 32%)}.hero-content{padding-bottom:30px}.hero h1{font-size:clamp(56px,12vw,80px)}.hero-content>p{font-size:12px;max-width:330px}.hero-actions{gap:19px;flex-wrap:wrap}.hero-side{display:none}.hero-bottom{font-size:7px;letter-spacing:1px;bottom:18px}.section-pad{padding:72px 7%}.intro{grid-template-columns:1fr;gap:45px}.intro-photo{max-width:500px}.intro-photo img{height:350px}.intro-copy h2,.section-heading h2,.reservation h2{font-size:43px}.section-heading{align-items:start;flex-direction:column;gap:15px}.section-heading>p br{display:none}.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 15px}.dish-image{height:clamp(150px,32vw,230px)}.dish-info{gap:7px}.dish-info h3{font-size:16px}.dish-info p{font-size:9px}.price{font-size:11px}.filters{gap:7px}.filter{padding:9px 12px}.gallery-grid{grid-template-columns:1fr 1fr;gap:10px}.gallery-grid img{height:220px}.gallery-grid img:first-child{grid-column:1/-1;height:270px}.reservation{grid-template-columns:1fr;gap:40px}.reservation-copy{padding-top:0}.reservation-form{padding:25px}.quote-band{padding:70px 7%}.footer{padding:40px 7%}}
 @media(max-width:420px){.hero-actions{align-items:flex-start;flex-direction:column;gap:20px}.menu-grid{grid-template-columns:1fr}.dish-image{height:235px}.dish-info h3{font-size:19px}.dish-info p{font-size:10px}.gallery-grid img{height:170px}.gallery-grid img:first-child{height:220px}.form-row{grid-template-columns:1fr}.reservation-form{padding:20px}.footer-bottom{gap:15px;font-size:7px;letter-spacing:.7px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* EMBER & OAK — LOGO ALIGNMENT FIX */
+.brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.brand-mark span {
+  display: inline;
+  font-size: 13px;
+  letter-spacing: -1px;
+}
+/* EMBER & OAK — PREMIUM MENU CARD POLISH */
+
+.menu-grid {
+  column-gap: 26px;
+  row-gap: 42px;
+}
+
+.dish {
+  min-width: 0;
+  transition: transform 0.3s ease;
+}
+
+.dish-image {
+  height: 245px;
+  border: 1px solid rgba(211, 173, 112, 0.14);
+  background: #1b1a16;
+}
+
+.dish-image img {
+  transition: transform 0.65s ease, filter 0.4s ease;
+  filter: saturate(0.82) contrast(1.02);
+}
+
+.dish:hover .dish-image img {
+  transform: scale(1.055);
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.dish-number {
+  border: 1px solid rgba(211, 173, 112, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.dish-info {
+  padding-top: 20px;
+  padding-bottom: 13px;
+  border-bottom-color: rgba(211, 173, 112, 0.2);
+}
+
+.dish-info h3 {
+  line-height: 1.4;
+  transition: color 0.25s ease;
+}
+
+.dish:hover .dish-info h3 {
+  color: var(--gold-light);
+}
+
+.price {
+  font-weight: 600;
+}
+
+.dish-type {
+  letter-spacing: 1.5px;
+  line-height: 1.8;
+}
+
+@media (max-width: 760px) {
+  .menu-grid {
+    column-gap: 15px;
+    row-gap: 30px;
+  }
+
+  .dish-image {
+    height: clamp(155px, 32vw, 225px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dish,
+  .dish-image img,
+  .dish-info h3 {
+    transition: none !important;
+  }
+}
+
+/* EMBER & OAK — PREMIUM EDITORIAL GALLERY */
+
+.gallery {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 85% 15%,
+      rgba(211, 173, 112, 0.055),
+      transparent 42%
+    ),
+    #151512;
+}
+
+.gallery .section-heading {
+  margin-bottom: 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 42px;
+  align-items: stretch;
+}
+
+.gallery-grid img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  filter: saturate(0.72) brightness(0.88);
+  border: 1px solid rgba(211, 173, 112, 0.18);
+  transition:
+    filter 0.45s ease,
+    transform 0.55s ease,
+    border-color 0.35s ease;
+}
+
+.gallery-grid img:first-child {
+  height: 370px;
+}
+
+.gallery-grid img:hover {
+  filter: saturate(1) brightness(1);
+  transform: translateY(-5px);
+  border-color: rgba(211, 173, 112, 0.65);
+}
+
+/* TABLET */
+@media (max-width: 760px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .gallery-grid img {
+    height: 230px;
+  }
+
+  .gallery-grid img:first-child {
+    grid-column: 1 / -1;
+    height: 300px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 420px) {
+  .gallery-grid {
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .gallery-grid img {
+    height: 175px;
+  }
+
+  .gallery-grid img:first-child {
+    height: 230px;
+  }
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-grid img {
+    transition: none;
+  }
+
+  .gallery-grid img:hover {
+    transform: none;
+  }
+}
+
+/* EMBER & OAK — RESERVATION AND FOOTER FINISH */
+#reservation {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 8% 20%, rgba(211,173,112,.075), transparent 38%),
+    #10100e;
+}
+
+#reservation .container {
+  position: relative;
+  z-index: 1;
+}
+
+#reservationForm {
+  position: relative;
+  padding: clamp(20px, 3.5vw, 38px);
+  border: 1px solid rgba(211,173,112,.24);
+  background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+  box-shadow: 0 20px 60px rgba(0,0,0,.18);
+}
+
+#reservationForm input,
+#reservationForm select,
+#reservationForm textarea {
+  width: 100%;
+  min-width: 0;
+  color: #f4eee4;
+  background: #191916;
+  border: 1px solid rgba(211,173,112,.22);
+  border-radius: 2px;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+#reservationForm input,
+#reservationForm select,
+#reservationForm textarea {
+  padding: 13px 14px;
+}
+
+#reservationForm input:focus,
+#reservationForm select:focus,
+#reservationForm textarea:focus {
+  outline: none;
+  border-color: #d3ad70;
+  box-shadow: 0 0 0 3px rgba(211,173,112,.09);
+}
+
+#reservationForm input::placeholder,
+#reservationForm textarea::placeholder {
+  color: #a49b8c;
+}
+
+#reservationForm button {
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+#reservationForm button:hover {
+  transform: translateY(-2px);
+}
+
+#reservationForm button:focus-visible,
+#reservation a:focus-visible,
+footer a:focus-visible {
+  outline: 2px solid #d3ad70;
+  outline-offset: 4px;
+}
+
+footer {
+  position: relative;
+  border-top: 1px solid rgba(211,173,112,.22);
+  background: #0b0b09;
+}
+
+footer a {
+  transition: color .25s ease;
+}
+
+footer a:hover {
+  color: #d3ad70;
+}
+
+@media(max-width:760px) {
+  #reservationForm {
+    padding: 20px 16px;
+  }
+
+  #reservationForm input,
+  #reservationForm select,
+  #reservationForm textarea {
+    font-size: 16px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  #reservationForm input,
+  #reservationForm select,
+  #reservationForm textarea,
+  #reservationForm button,
+  footer a {
+    transition: none !important;
+  }
+
+  #reservationForm button:hover {
+    transform: none;
+  }
+}
+
+/* EMBER & OAK — DEMO RESERVATION SUCCESS SCREEN */
+#reservationForm.reservation-success-form {
+  display: block;
+  min-height: 320px;
+}
+
+#reservationForm .reservation-success {
+  display: flex;
+  min-height: 280px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+  text-align: center;
+}
+
+#reservationForm .reservation-success__icon {
+  width: 76px;
+  height: 76px;
+  margin-bottom: 22px;
+  animation: eo-success-pop .45s ease-out both;
+}
+
+#reservationForm .reservation-success__icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#reservationForm .reservation-success__icon circle {
+  stroke: #69c98b;
+  stroke-width: 2.5;
+  fill: rgba(105, 201, 139, .10);
+}
+
+#reservationForm .reservation-success__icon path {
+  stroke: #69c98b;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#reservationForm .reservation-success__eyebrow {
+  margin: 0 0 12px;
+  color: var(--gold, #d3ad70);
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+#reservationForm .reservation-success h3 {
+  margin: 0 0 12px;
+  color: #f5eee3;
+  font-size: clamp(23px, 3vw, 32px);
+  line-height: 1.3;
+}
+
+#reservationForm .reservation-success__message {
+  max-width: 390px;
+  margin: 0;
+  color: #bdb5a8;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+#reservationForm .reservation-success__note {
+  margin-top: 24px;
+  color: var(--gold, #d3ad70);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+@keyframes eo-success-pop {
+  from { opacity: 0; transform: scale(.72); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  #reservationForm .reservation-success__icon {
+    animation: none;
+  }
+}

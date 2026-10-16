@@ -81,3 +81,43 @@ reservationForm?.addEventListener("submit", event => {
   window.location.href =
     `mailto:vedg475@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
+
+// EMBER-OAK-DEMO-RESERVATION-SUCCESS
+(() => {
+  const setupDemoReservation = () => {
+    const form = document.getElementById('reservationForm');
+    if (!form || form.dataset.demoSuccessEnabled === 'true') return;
+
+    form.dataset.demoSuccessEnabled = 'true';
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      form.classList.add('reservation-success-form');
+      form.innerHTML = `
+        <div class="reservation-success" role="status" aria-live="polite">
+          <div class="reservation-success__icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="27" />
+              <path d="M19 32.5 27.5 41 45 23" />
+            </svg>
+          </div>
+          <p class="reservation-success__eyebrow">EMBER &amp; OAK</p>
+          <h3>Request Submitted Successfully!</h3>
+          <p class="reservation-success__message">
+            Thank you for choosing us. This is a demo preview;
+            no actual reservation has been sent.
+          </p>
+          <span class="reservation-success__note">A TASTE WORTH REMEMBERING</span>
+        </div>
+      `;
+    }, true);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupDemoReservation);
+  } else {
+    setupDemoReservation();
+  }
+})();
